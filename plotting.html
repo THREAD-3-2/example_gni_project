@@ -1,0 +1,170 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Plotting &#8212; example_gni_project 0.1 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Integration methods" href="integrators.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="plotting">
+<span id="id1"></span><h1>Plotting<a class="headerlink" href="#plotting" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="trajectory">
+<h2>Trajectory<a class="headerlink" href="#trajectory" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="example_gni_project.plot_trajectory">
+<code class="sig-prename descclassname">example_gni_project.</code><code class="sig-name descname">plot_trajectory</code><span class="sig-paren">(</span><em class="sig-param">simulation: example_gni_project.containers.SimulationResult</em>, <em class="sig-param">filename=None</em><span class="sig-paren">)</span><a class="headerlink" href="#example_gni_project.plot_trajectory" title="Permalink to this definition">¶</a></dt>
+<dd><p>plot the entire discrete trajectory</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>simulation</strong> (<em>SimulationResult</em>) – </p></li>
+<li><p><strong>filename</strong> (<em>str</em>) – If a filename (path) is provided, the plot is saved.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="phase-portrait">
+<h2>Phase portrait<a class="headerlink" href="#phase-portrait" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="example_gni_project.plot_phase_portrait">
+<code class="sig-prename descclassname">example_gni_project.</code><code class="sig-name descname">plot_phase_portrait</code><span class="sig-paren">(</span><em class="sig-param">simulation: example_gni_project.containers.SimulationResult</em>, <em class="sig-param">x=0</em>, <em class="sig-param">y=1</em>, <em class="sig-param">filename=None</em><span class="sig-paren">)</span><a class="headerlink" href="#example_gni_project.plot_phase_portrait" title="Permalink to this definition">¶</a></dt>
+<dd><p>plot the phase portrait</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>simulation</strong> (<em>SimulationResult</em>) – </p></li>
+<li><p><strong>x</strong> (<em>int</em>) – Index of the coordinate that is plotted on the x-axis.</p></li>
+<li><p><strong>y</strong> (<em>int</em>) – Index of the coordinate that is plotted on the y-axis.</p></li>
+<li><p><strong>filename</strong> (<em>str</em>) – If a filename (path) is provided, the plot is saved.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="state-functions">
+<h2>State functions<a class="headerlink" href="#state-functions" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="example_gni_project.plot_function">
+<code class="sig-prename descclassname">example_gni_project.</code><code class="sig-name descname">plot_function</code><span class="sig-paren">(</span><em class="sig-param">simulation: example_gni_project.containers.SimulationResult</em>, <em class="sig-param">name: str</em>, <em class="sig-param">function=&lt;function &lt;lambda&gt;&gt;</em>, <em class="sig-param">filename=None</em><span class="sig-paren">)</span><a class="headerlink" href="#example_gni_project.plot_function" title="Permalink to this definition">¶</a></dt>
+<dd><p>plot an arbitrary function of the state</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>simulation</strong> (<em>SimulationResult</em>) – </p></li>
+<li><p><strong>name</strong> (<em>str</em>) – name / plot title</p></li>
+<li><p><strong>function</strong> (<em>function</em>) – function of the state</p></li>
+<li><p><strong>filename</strong> (<em>str</em>) – If a filename (path) is provided, the plot is saved.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">example_gni_project</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="example.html">Example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="timestepping.html">Time stepping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="integrators.html">Integration methods</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Plotting</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#trajectory">Trajectory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#phase-portrait">Phase portrait</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#state-functions">State functions</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="integrators.html" title="previous chapter">Integration methods</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2022, Markus Lohmayer.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/plotting.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -7,11 +7,13 @@
 This example shows how to simulate the evolution of a simple pendulum
 with the symplectic Euler method.
 
+
 Problem description
 ===================
 
 The state space is :math:`\mathbb{R}^2`
-and the initial value problem is given by
+and the initial value problem
+whose solution is the evolution of the pendulum dynamics is
 
 .. math::
 
@@ -61,7 +63,7 @@ see :ref:`plotting`.
     ...     return 1/2 * p**2 + (1 - np.cos(q))
 
     >>> simulation = simulate(
-    ...     ivp_pendulum,
+    ...     pendulum_ivp,
     ...     symplectic_euler,
     ...     0.25,
     ...     duration=55.0
@@ -69,5 +71,5 @@ see :ref:`plotting`.
 
     >>> plot_trajectory(simulation)
     >>> plot_phase_portrait(simulation)
-    >>> plot_function(simulation, "energy", pendulum_energy)
+    >>> plot_observable(simulation, "energy", pendulum_energy)
 

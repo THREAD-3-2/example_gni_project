@@ -1,18 +1,19 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
     <title>Documentation of example_gni_project &#8212; example_gni_project 0.1 documentation</title>
-    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/language_data.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Installation" href="installation.html" />
@@ -32,18 +33,27 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="documentation-of-example-gni-project">
-<h1>Documentation of <cite>example_gni_project</cite><a class="headerlink" href="#documentation-of-example-gni-project" title="Permalink to this headline">¶</a></h1>
+  <section id="documentation-of-example-gni-project">
+<h1>Documentation of <cite>example_gni_project</cite><a class="headerlink" href="#documentation-of-example-gni-project" title="Permalink to this heading">¶</a></h1>
 <p><a class="reference external" href="https://github.com/MarkusLohmayer/example_gni_project">example_gni_project</a>
 is a  pure Python library for
 solving initial value problems
-given by first-order ordinary differential equations (i.e. a vector fields on the state space)
-and an initial condition (i.e. a point of the state space).</p>
+stated as
+first-order ordinary differential equations (i.e. a vector field on the state space)
+together with an initial condition (i.e. a point of the state space).
+A subset of the implemented methods is <a class="reference internal" href="integrators.html#symplectic"><span class="std std-ref">symplectic</span></a>
+and hence particularly fitting for
+<a class="reference internal" href="ivp.html#hamiltonian-ivp"><span class="std std-ref">initial value problems with Hamiltonian structure</span></a>.</p>
 <p>The library was used as part of the Geometric Numerical Integration course
 offered by the <a class="reference external" href="https://www.ltd.tf.fau.de/">Institute of Applied Dynamics</a>
-in the summer semester of 2021.</p>
-<div class="section" id="contents">
-<h2>Contents<a class="headerlink" href="#contents" title="Permalink to this headline">¶</a></h2>
+in the summer semester of 2021.
+For this purpose, the students received the library
+with the contents of the file <cite>example_gni_project/integrators.py</cite> largely missing.
+The students’ task was
+to implement a number of integration methods
+and to study their behavior.</p>
+<section id="contents">
+<h2>Contents<a class="headerlink" href="#contents" title="Permalink to this heading">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a><ul>
@@ -55,34 +65,43 @@ in the summer semester of 2021.</p>
 <li class="toctree-l2"><a class="reference internal" href="example.html#simulation">Simulation</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="timestepping.html">Time stepping</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="timestepping.html#initial-value-problems">Initial value problems</a></li>
-<li class="toctree-l2"><a class="reference internal" href="timestepping.html#generic-time-stepping-routine">Generic time-stepping routine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ivp.html">Initial value problems</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ivp.html#general-initial-value-problems">General initial value problems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ivp.html#initial-value-problems-with-hamiltonian-structure">Initial value problems with Hamiltonian structure</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="integrators.html">Integration methods</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="integrators.html#non-symplectic-methods">Non-symplectic methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="integrators.html#symplectic-methods">Symplectic methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="integrators.html#generic-time-stepping-routine">Generic time-stepping routine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="integrators.html#explicit-euler"><cite>explicit_euler</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="integrators.html#implicit-euler"><cite>implicit_euler</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="integrators.html#symplectic-euler"><cite>symplectic_euler</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="integrators.html#symplectic-euler2"><cite>symplectic_euler2</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="integrators.html#stormer-verlet"><cite>störmer_verlet</cite></a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="plotting.html">Plotting</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="plotting.html#trajectory">Trajectory</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plotting.html#phase-portrait">Phase portrait</a></li>
-<li class="toctree-l2"><a class="reference internal" href="plotting.html#state-functions">State functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotting.html#observables">Observables</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="convergence.html">Convergence analysis</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="convergence.html#compute-errors-and-estimate-convergence">Compute errors and estimate convergence</a></li>
+<li class="toctree-l2"><a class="reference internal" href="convergence.html#log-log-plot">Log-log plot</a></li>
 </ul>
 </li>
 </ul>
 </div>
-</div>
-<div class="section" id="indices-and-tables">
-<h2>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="indices-and-tables">
+<h2>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
 <li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
 <li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
 
           </div>
@@ -104,9 +123,10 @@ in the summer semester of 2021.</p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="example.html">Example</a></li>
-<li class="toctree-l1"><a class="reference internal" href="timestepping.html">Time stepping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ivp.html">Initial value problems</a></li>
 <li class="toctree-l1"><a class="reference internal" href="integrators.html">Integration methods</a></li>
 <li class="toctree-l1"><a class="reference internal" href="plotting.html">Plotting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="convergence.html">Convergence analysis</a></li>
 </ul>
 
 <div class="relations">
@@ -121,12 +141,12 @@ in the summer semester of 2021.</p>
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
 
 
 
@@ -143,7 +163,7 @@ in the summer semester of 2021.</p>
       &copy;2022, Markus Lohmayer.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.4</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.0.2</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |

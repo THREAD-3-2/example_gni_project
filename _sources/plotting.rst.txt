@@ -4,18 +4,22 @@
  Plotting
 ==========
 
+These functions are for visualizing simulation results.
+
 Trajectory
 ----------
 
 .. autofunction:: example_gni_project.plot_trajectory
+
 
 Phase portrait
 --------------
 
 .. autofunction:: example_gni_project.plot_phase_portrait
 
-State functions
----------------
 
-.. autofunction:: example_gni_project.plot_function
+Observables
+-----------
+
+.. autofunction:: example_gni_project.plot_observable
 

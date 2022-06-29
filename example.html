@@ -1,21 +1,23 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
     <title>Example &#8212; example_gni_project 0.1 documentation</title>
-    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/language_data.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Time stepping" href="timestepping.html" />
+    <link rel="next" title="Initial value problems" href="ivp.html" />
     <link rel="prev" title="Installation" href="installation.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
@@ -33,14 +35,15 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="example">
-<span id="id1"></span><h1>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h1>
+  <section id="example">
+<span id="id1"></span><h1>Example<a class="headerlink" href="#example" title="Permalink to this heading">¶</a></h1>
 <p>This example shows how to simulate the evolution of a simple pendulum
 with the symplectic Euler method.</p>
-<div class="section" id="problem-description">
-<h2>Problem description<a class="headerlink" href="#problem-description" title="Permalink to this headline">¶</a></h2>
+<section id="problem-description">
+<h2>Problem description<a class="headerlink" href="#problem-description" title="Permalink to this heading">¶</a></h2>
 <p>The state space is <span class="math notranslate nohighlight">\(\mathbb{R}^2\)</span>
-and the initial value problem is given by</p>
+and the initial value problem
+whose solution is the evolution of the pendulum dynamics is</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
     \dot{q} &amp;= p \\
@@ -54,13 +57,13 @@ and the initial value problem is given by</p>
 <p>The right hand side of the first two equations define a vector field on <span class="math notranslate nohighlight">\(\mathbb{R}^2\)</span>
 and the last two equations define a point on <span class="math notranslate nohighlight">\(\mathbb{R}^2\)</span>.</p>
 </div>
-</div>
-<div class="section" id="simulation">
-<h2>Simulation<a class="headerlink" href="#simulation" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="simulation">
+<h2>Simulation<a class="headerlink" href="#simulation" title="Permalink to this heading">¶</a></h2>
 <p>First, the vector field is defined as a Python function,
-which in turn is used to define the <a class="reference internal" href="timestepping.html#ivp"><span class="std std-ref">initial value problem (IVP)</span></a>,
+which in turn is used to define the <a class="reference internal" href="ivp.html#ivp"><span class="std std-ref">initial value problem (IVP)</span></a>,
 Then, the energy function (Hamiltonian) of the pendulum is defined as a Python function.
-The IVP is <a class="reference internal" href="timestepping.html#simulate"><span class="std std-ref">solved</span></a> with the symplectic Euler method
+The IVP is <a class="reference internal" href="integrators.html#simulate"><span class="std std-ref">solved</span></a> with the symplectic Euler method
 using a time step of 0.25 seconds for a duration of 55 seconds,
 Finally, the trajectory, the phase portrait and the evolution of the energy are plotted,
 see <a class="reference internal" href="plotting.html#plotting"><span class="std std-ref">Plotting</span></a>.</p>
@@ -82,7 +85,7 @@ see <a class="reference internal" href="plotting.html#plotting"><span class="std
 <span class="gp">... </span>    <span class="k">return</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span> <span class="o">*</span> <span class="n">p</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">q</span><span class="p">))</span>
 
 <span class="gp">&gt;&gt;&gt; </span><span class="n">simulation</span> <span class="o">=</span> <span class="n">simulate</span><span class="p">(</span>
-<span class="gp">... </span>    <span class="n">ivp_pendulum</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">pendulum_ivp</span><span class="p">,</span>
 <span class="gp">... </span>    <span class="n">symplectic_euler</span><span class="p">,</span>
 <span class="gp">... </span>    <span class="mf">0.25</span><span class="p">,</span>
 <span class="gp">... </span>    <span class="n">duration</span><span class="o">=</span><span class="mf">55.0</span>
@@ -90,11 +93,11 @@ see <a class="reference internal" href="plotting.html#plotting"><span class="std
 
 <span class="gp">&gt;&gt;&gt; </span><span class="n">plot_trajectory</span><span class="p">(</span><span class="n">simulation</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">plot_phase_portrait</span><span class="p">(</span><span class="n">simulation</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">plot_function</span><span class="p">(</span><span class="n">simulation</span><span class="p">,</span> <span class="s2">&quot;energy&quot;</span><span class="p">,</span> <span class="n">pendulum_energy</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plot_observable</span><span class="p">(</span><span class="n">simulation</span><span class="p">,</span> <span class="s2">&quot;energy&quot;</span><span class="p">,</span> <span class="n">pendulum_energy</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
           </div>
@@ -120,9 +123,10 @@ see <a class="reference internal" href="plotting.html#plotting"><span class="std
 <li class="toctree-l2"><a class="reference internal" href="#simulation">Simulation</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="timestepping.html">Time stepping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ivp.html">Initial value problems</a></li>
 <li class="toctree-l1"><a class="reference internal" href="integrators.html">Integration methods</a></li>
 <li class="toctree-l1"><a class="reference internal" href="plotting.html">Plotting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="convergence.html">Convergence analysis</a></li>
 </ul>
 
 <div class="relations">
@@ -130,7 +134,7 @@ see <a class="reference internal" href="plotting.html#plotting"><span class="std
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
       <li>Previous: <a href="installation.html" title="previous chapter">Installation</a></li>
-      <li>Next: <a href="timestepping.html" title="next chapter">Time stepping</a></li>
+      <li>Next: <a href="ivp.html" title="next chapter">Initial value problems</a></li>
   </ul></li>
 </ul>
 </div>
@@ -138,12 +142,12 @@ see <a class="reference internal" href="plotting.html#plotting"><span class="std
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
 
 
 
@@ -160,7 +164,7 @@ see <a class="reference internal" href="plotting.html#plotting"><span class="std
       &copy;2022, Markus Lohmayer.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.4</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.0.2</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |

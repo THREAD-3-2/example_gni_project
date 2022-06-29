@@ -21,6 +21,11 @@ install the package in a virtual environment like so:
     # install the project in editable state
     pip install -e .
 
-    # (optionally) install JupyterLab and Jupyter Widgets
+    # optionally install JupyterLab and Jupyter Widgets
     pip install jupyterlab ipywidgets
 
+
+For development, the packages listed in `requirements.txt` need to be installed:
+
+.. code-block:: bash
+    pip install -r requirements.txt

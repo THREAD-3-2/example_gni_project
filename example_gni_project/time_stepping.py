@@ -10,7 +10,7 @@ __all__ = ['simulate']
 
 
 def simulate(ivp, scheme, h, duration):
-    """compute discrete trajectory for an initial-value problem
+    """Compute a discrete trajectory for an initial-value problem.
 
     Parameters
     ----------
@@ -27,6 +27,23 @@ def simulate(ivp, scheme, h, duration):
     -------
     simulation: SimulationResult
         simulation result
+
+    Example
+    -------
+    Compute the evolution of a given initial value problem `ivp`
+    for 10 seconds
+    using the explicit Euler method
+    with a time step of 0.1 seconds.
+
+    >>> import autograd.numpy as np
+    >>> from example_gni_project import *
+    >>> def vector_field(x):
+    ...     q, p = x
+    ...     return np.array([p, -q])
+    >>> ivp = IVP(("q", "p"), vector_field, np.array([1., 0.]))
+    >>> simulation = simulate(ivp, explicit_euler, 0.1, 0.5)
+    >>> simulation.trajectory[-1, :]
+    array([ 0.9005 , -0.49001])
     """
 
     dim = len(ivp.variables)

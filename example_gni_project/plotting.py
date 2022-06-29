@@ -7,11 +7,12 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
-__all__ = ['plot_trajectory', 'plot_phase_portrait', 'plot_function']
+__all__ = ['plot_trajectory', 'plot_phase_portrait', 'plot_observable']
 
 
 def plot_trajectory(simulation: SimulationResult, filename=None):
-    """plot the entire discrete trajectory
+    """Plot the entire discrete trajectory.
+    The figure contains one line plot for every component of the state space.
 
     Parameters
     ----------
@@ -32,15 +33,15 @@ def plot_trajectory(simulation: SimulationResult, filename=None):
 
 
 def plot_phase_portrait(simulation: SimulationResult, x=0, y=1, filename=None):
-    """plot the phase portrait
+    """Plot the phase portrait.
 
     Parameters
     ----------
     simulation: SimulationResult
     x: int
-        Index of the coordinate that is plotted on the x-axis.
+        Index of the component that is plotted on the x-axis.
     y: int
-        Index of the coordinate that is plotted on the y-axis.
+        Index of the component that is plotted on the y-axis.
     filename: str
         If a filename (path) is provided, the plot is saved.
     """
@@ -59,24 +60,37 @@ def plot_phase_portrait(simulation: SimulationResult, x=0, y=1, filename=None):
         fig.savefig(filename)
 
 
-def plot_function(simulation: SimulationResult, name: str, function=lambda x: x, filename=None):
-    """plot an arbitrary function of the state
+def plot_observable(simulation: SimulationResult, name: str, observable, filename=None):
+    """Plot the evolution of an observable (scalar-valued function of the state).
     
     Parameters
     ----------
     simulation: SimulationResult
     name: str
         name / plot title
-    function: function
-        function of the state
+    observable: function
+        scalar-valued function of the state (e.g. energy)
     filename: str
         If a filename (path) is provided, the plot is saved.
+
+    Example
+    -------
+    Plot just the first component of the state:
+
+    >>> import autograd.numpy as np
+    >>> from example_gni_project import *
+    >>> def vector_field(x):
+    ...     q, p = x
+    ...     return np.array([p, -q])
+    >>> ivp = IVP(("q", "p"), vector_field, np.array([1., 0.]))
+    >>> simulation = simulate(ivp, explicit_euler, 0.1, 0.5)
+    >>> plot_observable(simulation, "q", lambda x: x[0])
     """
     n = 1 + simulation.steps
     t = np.arange(0, n) * simulation.h
     values = np.empty(n, dtype=np.float64)
     for i in range(n):
-        values[i] = function(simulation.trajectory[i])
+        values[i] = observable(simulation.trajectory[i])
     fig, ax = plt.subplots()
     ax.set_title(name)
     ax.plot(t, values)

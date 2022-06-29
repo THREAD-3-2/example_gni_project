@@ -1,5 +1,5 @@
 """
-Containers for of initial value problems and simulation results.
+Container types for initial value problems and simulation results.
 """
 
 import collections
@@ -13,7 +13,7 @@ IVP.__doc__ = """Type defining an initial value problem.
 
 Attributes
 ----------
-variables: tuple of strings
+variables: tuple of strings (used for plotting)
     names of the state variables
 vector_field: function
     right hand side of the ODE

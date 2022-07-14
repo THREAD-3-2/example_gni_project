@@ -32,6 +32,7 @@ Contents
    integrators
    plotting
    convergence
+   matlab
    :maxdepth: 2
 
 

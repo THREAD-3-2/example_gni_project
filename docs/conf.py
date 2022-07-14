@@ -31,10 +31,21 @@ release = '0.1'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
+    # automatically check that examples work with `make doctest`
     'sphinx.ext.doctest',
+    # automatically extract in-line documentation from your (Python) code
     'sphinx.ext.autodoc',
     'sphinx.ext.napoleon',
+    # add ability to automatically extract in-line documentation from MATLAB code
+    'sphinxcontrib.matlab',
 ]
+
+# specify the source folder of the MATLAB code
+# For a pure MATLAB project, you probably want to use `src` as the name.
+matlab_src_dir = "../matlab_src/"
+# For a pure MATLAB project, you can specify `mat` as the primary domain to save some typing,
+# e.g. `autoclass` instead of `mat:autoclass` (see matlab.rst file).
+# primary_domain = 'mat'
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']

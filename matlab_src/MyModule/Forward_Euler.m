@@ -1,20 +1,22 @@
-function [t,x] = Forward_Euler(x0,dt,T)
+function [t, x] = Forward_Euler(vector_field, initial_condition, h, duration)
 % Forward Euler time integrator
 %
-% :param x0: initial value, dt: time step, T: total time
-% :returns: t, x
+% :param vector_field: right hand side of the ODE
+% :param initial_condition: initial condition
+% :param h: time step size
+% :param duration: duration of simulation
+%
+% :returns: [t, x] : time grid, discrete trajectory
 
-N = T/dt;
-t=zeros(N+1);
-x=zeros(N+1);
+N = round(duration/h, 0);
+t = zeros(N+1,1);
+x = zeros(size(initial_condition, 2), N+1);
 
 t(1) = 0;
-x(1) = x0;
+x(:, 1) = initial_condition;
 
-for i=2:N+1
-    % update x
-    x(i) = x(i-1) + dt*fun(t(i-1),x(i-1));
-    % update t
-    t(i) = t(i-1) + dt;
+for i = 2:N+1
+    x(:, i) = x(:, i-1) + h*vector_field(x(:, i-1));
+    t(i) = t(i-1) + h;
 end
 end

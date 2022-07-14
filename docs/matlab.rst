@@ -17,10 +17,10 @@ This is the `MyModule` module.
 
 :mod:`MyModule` is a really cool module.
 
-My Handle Class
----------------
-This is the handle class definition.
+Example for Forward Euler
+-------------------------
+This is an example
 
-.. mat:autoclass:: MyHandleClass
-    :show-inheritance:
-    :members:
+.. mat:autoscript:: MyModule.main
+    
+.. mat:autofunction:: MyModule.Forward_Euler

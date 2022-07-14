@@ -4,23 +4,20 @@
  MATLAB code
 =============
 
-This example is taken from the
-`matlabdomain README.md <https://github.com/sphinx-contrib/matlabdomain/blob/master/README.rst>`_.
+This primitive example just shows how to document MATLAB code with Sphinx
+using the `matlabdomain extension <https://github.com/sphinx-contrib/matlabdomain/blob/master/README.rst>`_.
 
-Note that the MATLAB code apparently uses Google Style docstrings.
 
 MyModule
 ========
-This is the `MyModule` module.
 
 .. mat:automodule:: MyModule
 
-:mod:`MyModule` is a really cool module.
+:mod:`MyModule` module contains a function
+which implements the explicit Euler method:
+    
+.. mat:autofunction:: MyModule.Forward_Euler
 
-My Handle Class
----------------
-This is the handle class definition.
+The module further contains an example script:
 
-.. mat:autoclass:: MyHandleClass
-    :show-inheritance:
-    :members:
+.. mat:autoscript:: MyModule.main

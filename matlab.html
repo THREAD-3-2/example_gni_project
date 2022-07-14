@@ -35,56 +35,38 @@
             
   <section id="matlab-code">
 <span id="matlab"></span><h1>MATLAB code<a class="headerlink" href="#matlab-code" title="Permalink to this heading">¶</a></h1>
-<p>This example is taken from the
-<a class="reference external" href="https://github.com/sphinx-contrib/matlabdomain/blob/master/README.rst">matlabdomain README.md</a>.</p>
-<p>Note that the MATLAB code apparently uses Google Style docstrings.</p>
-<section id="mymodule">
-<h2>MyModule<a class="headerlink" href="#mymodule" title="Permalink to this heading">¶</a></h2>
-<p>This is the <cite>MyModule</cite> module.</p>
-<span class="target" id="module-MyModule"></span><p><code class="xref py py-mod docutils literal notranslate"><span class="pre">MyModule</span></code> is a really cool module.</p>
-<section id="my-handle-class">
-<h3>My Handle Class<a class="headerlink" href="#my-handle-class" title="Permalink to this heading">¶</a></h3>
-<p>This is the handle class definition.</p>
-<dl class="mat class">
-<dt class="sig sig-object mat" id="MyModule.MyHandleClass">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">MyModule.</span></span><span class="sig-name descname"><span class="pre">MyHandleClass</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">x</span></em><span class="sig-paren">)</span><a class="headerlink" href="#MyModule.MyHandleClass" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">handle</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">my.super.Class</span></code></p>
-<p>a handle class</p>
+<p>This primitive example just shows how to document MATLAB code with Sphinx
+using the <a class="reference external" href="https://github.com/sphinx-contrib/matlabdomain/blob/master/README.rst">matlabdomain extension</a>.</p>
+<section id="module-MyModule">
+<span id="mymodule"></span><h2>MyModule<a class="headerlink" href="#module-MyModule" title="Permalink to this heading">¶</a></h2>
+<p><code class="xref py py-mod docutils literal notranslate"><span class="pre">MyModule</span></code> module contains a function
+which implements the explicit Euler method:</p>
+<dl class="mat function">
+<dt class="sig sig-object mat" id="MyModule.Forward_Euler">
+<span class="sig-prename descclassname"><span class="pre">MyModule.</span></span><span class="sig-name descname"><span class="pre">Forward_Euler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">vector_field</span></em>, <em class="sig-param"><span class="pre">initial_condition</span></em>, <em class="sig-param"><span class="pre">h</span></em>, <em class="sig-param"><span class="pre">duration</span></em><span class="sig-paren">)</span><a class="headerlink" href="#MyModule.Forward_Euler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Forward Euler time integrator</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>x</strong> – a variable</p>
-</dd>
-</dl>
-<dl class="mat staticmethod">
-<dt class="sig sig-object mat" id="MyModule.MyHandleClass.my_static_function">
-<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">my_static_function</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">z</span></em><span class="sig-paren">)</span><a class="headerlink" href="#MyModule.MyHandleClass.my_static_function" title="Permalink to this definition">¶</a></dt>
-<dd><p>A static function in <code class="xref py py-class docutils literal notranslate"><span class="pre">MyHandleClass</span></code>.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>z</strong> – input z</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>vector_field</strong> – right hand side of the ODE</p></li>
+<li><p><strong>initial_condition</strong> – initial condition</p></li>
+<li><p><strong>h</strong> – time step size</p></li>
+<li><p><strong>duration</strong> – duration of simulation</p></li>
+</ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>w</p>
+<dd class="field-even"><p>time grid, discrete trajectory</p>
 </dd>
 </dl>
 </dd></dl>
 
-<dl class="mat attribute">
-<dt class="sig sig-object mat" id="MyModule.MyHandleClass.x">
-<span class="sig-name descname"><span class="pre">x</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#MyModule.MyHandleClass.x" title="Permalink to this definition">¶</a></dt>
-<dd><p>a property</p>
+<p>The module further contains an example script:</p>
+<dl class="mat script">
+<dt class="sig sig-object mat" id="MyModule.main">
+<span class="sig-prename descclassname"><span class="pre">MyModule.</span></span><span class="sig-name descname"><span class="pre">main</span></span><a class="headerlink" href="#MyModule.main" title="Permalink to this definition">¶</a></dt>
+<dd><p>An example showing how to use the <cite>Forward_Euler</cite> function.</p>
 </dd></dl>
 
-<dl class="mat attribute">
-<dt class="sig sig-object mat" id="MyModule.MyHandleClass.y">
-<span class="sig-name descname"><span class="pre">y</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#MyModule.MyHandleClass.y" title="Permalink to this definition">¶</a></dt>
-<dd><p>Multiple lines before a
-property can also be used</p>
-</dd></dl>
-
-</dd></dl>
-
-</section>
 </section>
 </section>
 
@@ -113,7 +95,7 @@ property can also be used</p>
 <li class="toctree-l1"><a class="reference internal" href="plotting.html">Plotting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="convergence.html">Convergence analysis</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">MATLAB code</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#mymodule">MyModule</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-MyModule">MyModule</a></li>
 </ul>
 </li>
 </ul>

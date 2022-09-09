@@ -1,15 +1,14 @@
 .. _matlab:
 
-=============
- MATLAB code
-=============
+MATLAB code
+===========
 
 This primitive example just shows how to document MATLAB code with Sphinx
 using the `matlabdomain extension <https://github.com/sphinx-contrib/matlabdomain/blob/master/README.rst>`_.
 
 
 MyModule
-========
+--------
 
 .. mat:automodule:: MyModule
 

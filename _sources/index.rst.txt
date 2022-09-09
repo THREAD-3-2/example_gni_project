@@ -1,6 +1,5 @@
-========================================
- Documentation of `example_gni_project`
-========================================
+Example GNI Project Documentation
+=================================
 
 `example_gni_project <https://github.com/MarkusLohmayer/example_gni_project>`_
 is a  pure Python library for
@@ -23,9 +22,11 @@ and to study their behavior.
 
 
 Contents
-========
+--------
 
 .. toctree::
+   :maxdepth: 2
+
    installation
    example
    ivp
@@ -33,11 +34,10 @@ Contents
    plotting
    convergence
    matlab
-   :maxdepth: 2
 
 
 Indices and tables
-==================
+------------------
 
 * :ref:`genindex`
 * :ref:`search`

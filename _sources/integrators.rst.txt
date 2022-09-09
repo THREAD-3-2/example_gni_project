@@ -1,8 +1,7 @@
 .. _integrators:
 
-=====================
- Integration methods
-=====================
+Integration methods
+===================
 
 .. _simulate:
 
@@ -17,7 +16,7 @@ All integration methods are used via the same time-stepping routine:
 .. _nonsymplectic:
 
 Non-symplectic methods
-======================
+----------------------
 
 Below
 :math:`X \colon \mathcal{X} \rightarrow T \mathcal{X}` denotes the vector field
@@ -27,8 +26,8 @@ Further, :math:`x_1 \in \mathcal{X}` denotes the state of the system
 after one time step of size :math:`h`.
 
 
-`explicit_euler`
-----------------
+Explicit Euler
+~~~~~~~~~~~~~~
 
 The explicit Euler method is the simplest approximation one can make:
 
@@ -43,8 +42,8 @@ the integrator will predict a gain of energy due to numerical errors.
 
 
 
-`implicit_euler`
-----------------
+Implicit Euler
+~~~~~~~~~~~~~~
 
 The implicit Euler method is already significantly more complicated in its implementation
 since it requires solving a system of possibly nonlinear equations:
@@ -62,7 +61,7 @@ the integrator will predict a loss of energy due to numerical errors.
 .. _symplectic:
 
 Symplectic methods
-===================
+------------------
 
 Symplectic methods have good long-time energy behavior.
 They (almost) conserve the energy (Hamiltonian) of a :ref:`Hamiltonian system <hamiltonian_ivp>`.
@@ -76,8 +75,8 @@ configuration variables :math:`q` and conjugate momentum variables :math:`p`,
 i.e. :math:`x = \left[ q, \, p \right]`.
 
 
-`symplectic_euler`
-------------------
+Symplectic Euler
+~~~~~~~~~~~~~~~~
 
 The symplectic Euler method essentially combines
 the explicit Euler method and the implicit Euler method:
@@ -101,9 +100,6 @@ the explicit Euler method and the implicit Euler method:
     \end{bmatrix}
     \biggr)
 
-
-`symplectic_euler2`
--------------------
 
 Another symplectic Euler method results when combining
 the implicit Euler method and the explicit Euler method
@@ -129,8 +125,8 @@ in the other obvious way:
     \biggr)
 
 
-`störmer_verlet`
-----------------
+Störmer-Verlet
+~~~~~~~~~~~~~~
 
 The Störmer-Verlet method results from the composition of
 the first and the second symplectic Euler method,
@@ -148,8 +144,9 @@ while
 
 
 .. math::
+    :nowrap:
 
-   \begin{align}
+    \begin{align}
         p_{1/2} &= p_0 + \frac{h}{2} \, X_p(q_0) \\
         q_1 &= q_0 + h \, p_{1/2} \\
         p_1 &= p_{1/2} + \frac{h}{2} \, X_p(q_1)

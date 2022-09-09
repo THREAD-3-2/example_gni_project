@@ -1,8 +1,7 @@
 .. _ivp:
 
-========================
- Initial value problems
-========================
+Initial value problems
+======================
 
 .. _general_ivp:
 

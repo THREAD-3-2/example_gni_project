@@ -1,15 +1,14 @@
 .. _example:
 
-=========
- Example
-=========
+Example
+=======
 
 This example shows how to simulate the evolution of a simple pendulum
 with the symplectic Euler method.
 
 
 Problem description
-===================
+-------------------
 
 The state space is :math:`\mathbb{R}^2`
 and the initial value problem
@@ -33,7 +32,7 @@ whose solution is the evolution of the pendulum dynamics is
 
 
 Simulation
-==========
+----------
 
 First, the vector field is defined as a Python function,
 which in turn is used to define the :ref:`initial value problem (IVP) <ivp>`,

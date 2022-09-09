@@ -1,8 +1,7 @@
 .. _convergence:
 
-======================
- Convergence analysis
-======================
+Convergence analysis
+====================
 
 
 Compute errors and estimate convergence

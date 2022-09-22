@@ -20,7 +20,7 @@ The students' task was
 to implement a number of integration methods
 and to study their behavior.
 
-.. image:: /figures/thread-logo.jpg  
+.. figure:: /figures/thread-logo.jpg  
 .. image:: /figures/flag_yellow.png
 
 Contents

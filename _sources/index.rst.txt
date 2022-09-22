@@ -1,4 +1,4 @@
-Example GNI Project Documentation
+Example geometric numerical integration methods
 =================================
 
 `example_gni_project <https://github.com/MarkusLohmayer/example_gni_project>`_

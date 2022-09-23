@@ -1,4 +1,4 @@
-# example geomeric numerical integration methods
+# Example geomeric numerical integration methods
 
 ![CI](https://github.com/THREAD-3-2/example_gni_project/workflows/CI/badge.svg)
 [![documentation](https://img.shields.io/badge/docs-passing-<COLOR>.svg)](https://THREAD-3-2.github.io/example_gni_project/)

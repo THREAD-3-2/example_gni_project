@@ -1,5 +1,6 @@
+======================================
 Documentation of 'example_gni_project'
-=================================
+======================================
 
 `example_gni_project <https://github.com/MarkusLohmayer/example_gni_project>`_ (Example geometric numerical integration methods)
 is a  pure Python library for

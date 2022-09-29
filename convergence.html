@@ -14,6 +14,7 @@
     <script src="_static/underscore.js"></script>
     <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="MATLAB code" href="matlab.html" />
@@ -51,7 +52,7 @@ applied to the given initial value problem.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>ivp</strong> (<a class="reference internal" href="ivp.html#example_gni_project.IVP" title="example_gni_project.IVP"><em>IVP</em></a>) – initial value problem</p></li>
 <li><p><strong>scheme</strong> (<em>function</em>) – function defining the integration scheme</p></li>
-<li><p><strong>hs</strong> (<em>list of floats</em>) – time step sizes
+<li><p><strong>hs</strong> (<em>list</em><em> of </em><em>floats</em>) – time step sizes
 The smallest time step is used to compute the reference.</p></li>
 <li><p><strong>duration</strong> (<em>float</em>) – duration of simulation
 The duration needs to be divisible by all time step sizes in hs.</p></li>
@@ -113,8 +114,8 @@ The plot can be used to empirically analyze the convergence of a numerical schem
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>hs</strong> (<em>list of floats</em>) – time steps (excluding the reference)</p></li>
-<li><p><strong>errors</strong> (<em>list of floats</em>) – corresponding to every time step in hs:
+<li><p><strong>hs</strong> (<em>list</em><em> of </em><em>floats</em>) – time steps (excluding the reference)</p></li>
+<li><p><strong>errors</strong> (<em>list</em><em> of </em><em>floats</em>) – corresponding to every time step in hs:
 norm of the deviation of the function value
 for the final state of the simulation
 from the corresponding value for the final state
@@ -194,7 +195,7 @@ of the reference simulation</p></li>
       &copy;2022, Markus Lohmayer.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.1.1</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.2.2</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |

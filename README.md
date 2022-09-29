@@ -6,3 +6,6 @@
 Python package for geometric numerical integration (example / template project).
 
 A very basic MATLAB example is also included.
+
+![](https://github.com/THREAD-3-2/.github/blob/main/profile/thread-logo.jpg)
+![](https://github.com/THREAD-3-2/.github/blob/main/profile/flag_yellow.png)
